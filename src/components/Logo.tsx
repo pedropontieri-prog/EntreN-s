@@ -1,11 +1,9 @@
 import { Link } from "@tanstack/react-router";
 
-import logo from "@/assets/entrenos-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 
 type LogoProps = {
   className?: string;
-  /** "full" mostra a logo completa; "mark" recorta apenas o símbolo. */
   variant?: "full" | "mark";
   asLink?: boolean;
 };
@@ -14,7 +12,7 @@ export function Logo({ className, variant = "full", asLink = true }: LogoProps) 
   const image =
     variant === "full" ? (
       <img
-        src={logo.url}
+        src="/entrenos-logo.png"
         alt="EntreNós"
         width={220}
         height={80}
@@ -26,9 +24,9 @@ export function Logo({ className, variant = "full", asLink = true }: LogoProps) 
         aria-hidden="true"
       >
         <img
-          src={logo.url}
+          src="/entrenos-logo.png"
           alt=""
-          className="h-[260%] w-[260%] -translate-x-[46%] -translate-y-[19%] object-cover"
+          className="h-full w-full object-contain"
         />
       </span>
     );
